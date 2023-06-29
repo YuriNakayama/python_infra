@@ -4,9 +4,6 @@ services:
   core:
     user: root
 
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -14,5 +11,5 @@ services:
     volumes:
         - ../:/home/Challenger/
     ports:
-        - 8000:8000
+        - 8888:8888
     restart: unless-stopped
